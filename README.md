@@ -86,31 +86,6 @@ npm start
 | **Wallet** | Freighter API | Wallet connectivity |
 | **Icons** | Lucide React | Professional icon system |
 
-### **Directory Structure**
-
-```
-rwa-frontend/
-├── app/                    # Next.js App Router
-│   ├── page.tsx           # Dashboard (main page)
-│   ├── marketplace/       # Asset marketplace
-│   ├── tokenize/          # Asset tokenization wizard
-│   ├── transfer/          # Token transfer interface
-│   ├── dashboard/         # Dashboard redirect
-│   ├── layout.tsx         # Root layout
-│   └── globals.css        # Global styles
-├── components/
-│   ├── ui/                # shadcn/ui components
-│   └── layout/            # Layout components
-├── lib/
-│   ├── types.ts           # TypeScript definitions
-│   ├── stellar.ts         # Stellar SDK utilities
-│   ├── contract.ts        # Smart contract client
-│   └── utils.ts           # Helper functions
-├── stores/
-│   ├── wallet.ts          # Wallet state management
-│   └── contract.ts        # Contract state management
-└── public/                # Static assets
-```
 
 ---
 
@@ -121,32 +96,6 @@ rwa-frontend/
 - **Network**: Stellar Testnet
 - **Asset**: Luxury Apartment NYC (LAPT)
 - **Type**: Premium Manhattan real estate token
-
-### **Supported Operations**
-
-| Operation | Description | Status |
-|-----------|-------------|--------|
-| `get_balance` | Query user's token balance | ✅ Implemented |
-| `get_metadata` | Retrieve asset information | ✅ Implemented |
-| `transfer` | Send tokens between addresses | ✅ Implemented |
-| `check_compliance` | Verify KYC/whitelist status | ✅ Implemented |
-| `get_supply` | Get total token supply | ✅ Implemented |
-| `mint` | Create new tokens (admin) | 🔄 Admin only |
-| `pause` | Pause contract operations | 🔄 Admin only |
-
-### **Asset Metadata Structure**
-
-```typescript
-interface AssetMetadata {
-  name: string;              // "Luxury Apartment NYC"
-  symbol: string;            // "LAPT"  
-  asset_type: string;        // "real_estate"
-  description: string;       // Asset description
-  valuation: string;         // Current USD value
-  last_valuation_date: number; // Unix timestamp
-  legal_doc_hash: string;    // Property deed hash
-}
-```
 
 ---
 
@@ -255,23 +204,6 @@ npm run lint
 # Build production bundle
 npm run build
 ```
-
-### **Environment Variables**
-
-```env
-# Optional - defaults are provided
-NEXT_PUBLIC_STELLAR_NETWORK=testnet
-NEXT_PUBLIC_CONTRACT_ID=CBQAAC4EHNMMHEI2W3QU6UQ5N4KSVYRLVTB5M2XMARCNS4CNLWMX3VQ6
-```
-
-### **Configuration Files**
-
-| File | Purpose |
-|------|---------|
-| `next.config.ts` | Next.js configuration |
-| `tailwind.config.ts` | Tailwind CSS settings |
-| `tsconfig.json` | TypeScript configuration |
-| `components.json` | shadcn/ui component config |
 
 ---
 
